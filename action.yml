@@ -78,7 +78,7 @@ runs:
         # Run eslint on changed files
         bash $GITHUB_ACTION_PATH/entrypoint.sh
       id: eslint-changed-files
-      shell: bash
+      shell: bash -ileo pipefail {0}
       env:
         GITHUB_SERVER_URL: ${{ github.server_url }}
         GITHUB_REPOSITORY: ${{ github.repository }}
